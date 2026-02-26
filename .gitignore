@@ -1,2 +1,3 @@
 .venv/
-week*/
+/week*/
+!/problems/week*/
