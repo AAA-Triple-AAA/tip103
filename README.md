@@ -2,24 +2,45 @@
 
 A curated collection of problem sets for TIP 103, organized by week and session. Problems are regularly updated as the course progresses.
 
-## 📁 Structure
+## Branches
 
-- **[problems/](./problems)** - All problem sets with problem statements
-  - `week1/`, `week2/`, ... - Problem sets organized by week
-  - Each week contains multiple sessions with problem sets
-- **[starter1/](./starter1)** - Boilerplate week folders and python files
-- **week\*/** - Your working copies (git-ignored to keep your progress private)
+- **`main`** - Contains problem statements only. Updated as new weeks are added.
+- **`solutions`** - Your personal branch for working through solutions. Periodically merges from `main` to pick up new problems.
 
-## 🚀 Getting Started
+## Structure
 
-1. View problems in the [problems](./problems) directory
-2. Copy a `week*` folder from [problems](./problems) to the root directory to work on it
-3. Solve the problems in your local copy
-4. Your changes in the root-level `week*` folders won't be tracked by git
+- [problems/](./problems) - Problem sets organized by week and session
+  - `week1/`, `week2/`, ... - One folder per week
+  - Each week contains two sessions, each with around 6-8 problems
+- [starters/](./starters) - Boilerplate files to copy when starting a new week
 
-## 📝 Organization
+## Workflow
 
-Problem sets are organized as follows:
-- Each week contains two sessions
-- Each session contains two problem sets
-- Each problem set has around 6-8 individual problems
+### Getting new problems
+
+When new weeks are added to `main`, pull them into your solutions branch:
+
+```bash
+git checkout solutions
+git merge main
+```
+
+### Starting a new week
+
+Copy the starter folder and rename it for the current week:
+
+```bash
+cp -r starters/weekX problems/weekN  # replace N with the week number
+```
+
+Then fill in your solutions in the copied folder.
+
+### Staying in sync
+
+Your solutions stay on the `solutions` branch and are never overwritten by merges from `main`, since `main` only adds new problem files.
+
+## Organization
+
+- Each week has two sessions
+- Each session has two problem sets
+- Each problem set has around 6-8 problems
